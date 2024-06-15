@@ -19,7 +19,7 @@ pipeline {
         stage('Pruebas API') {
             steps {
                 sh 'make test-api'
-                archiveArtifacts artifacts: 'results/api_test/*.xml'
+                archiveArtifacts artifacts: 'api_test/*.xml'
             }
         }
 
