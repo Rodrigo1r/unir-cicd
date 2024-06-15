@@ -13,7 +13,7 @@ pipeline {
         stage('Unit tests') {
             steps {
                 sh 'make test-unit'
-                archiveArtifacts artifacts: 'results/unit_test/*.xml'
+                archiveArtifacts artifacts: 'unit_test/*.xml'
             }
         }
         stage('Pruebas API') {
