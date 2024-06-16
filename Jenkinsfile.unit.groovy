@@ -25,7 +25,6 @@ pipeline {
 
         stage('Pruebas E2E') {
             steps {
-                sh 'make server'
                 sh 'make test-e2e'
                 archiveArtifacts artifacts: 'results/e2e_test/*.xml'
             }
