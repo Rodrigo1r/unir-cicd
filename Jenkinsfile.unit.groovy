@@ -25,6 +25,8 @@ pipeline {
 
         stage('Pruebas E2E') {
             steps {
+                sh  'docker stop apiserver'
+                sh 'docker rm apiserver'
                 sh 'make test-e2e'
                 archiveArtifacts artifacts: 'results/e2e_test/*.xml'
             }
