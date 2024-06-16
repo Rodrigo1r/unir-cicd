@@ -39,5 +39,12 @@ pipeline {
             junit 'results/e2e_test/*_result.xml'
             cleanWs()
         }
+
+         failure {
+            mail to: 'rodrigoenrrique.ordonez189@comunidadunir.net',
+                  subject: "Error en la Ejecucion de '${env.JOB_NAME}' #${env.BUILD_NUMBER}",
+                  body: "El motivo de esta notificacion es porque su pipeline '${env.JOB_NAME}' #${env.BUILD_NUMBER} ha teminado en error"
+        }
+
     }
 }
